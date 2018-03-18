@@ -1,6 +1,6 @@
 package ex15;
 
-//°üº¬Ö÷º¯Êı
+//åŒ…å«ä¸»å‡½æ•°
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -13,7 +13,7 @@ import ex15.StuAddDiag;
 
 public class Test3 extends JFrame implements ActionListener {
 private static final long serialVersionUID = 1L;
-//¶¨ÒåÒ»Ğ©¿Ø¼ş
+//å®šä¹‰ä¸€äº›æ§ä»¶
  JPanel jp1,jp2,jp3,jp4;
  JLabel jl1,jl2;
  JMenuItem jb1,jb2,jb3,jb4;
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 1L;
  
  StuModel sm; 
 
- //¶¨ÒåÁ¬½ÓÊı¾İ¿âµÄ±äÁ¿
+ //å®šä¹‰è¿æ¥æ•°æ®åº“çš„å˜é‡
  Statement stat = null;
  PreparedStatement ps;
  Connection ct = null;
@@ -34,31 +34,31 @@ private static final long serialVersionUID = 1L;
   new Test3();
  }
  
- //¹¹Ôìº¯Êı
+ //æ„é€ å‡½æ•°
  public Test3(){
 	 
-	 super("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³");
+	 super("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ");
 	 JMenuBar menuBar = new JMenuBar();
-     JMenu file = new JMenu("²Ëµ¥");
+     JMenu file = new JMenu("èœå•");
            
-     jb1 = new JMenuItem("²éÑ¯");
+     jb1 = new JMenuItem("æŸ¥è¯¢");
      jb1.addActionListener(this);   
      jp1 = new JPanel();  
        
-     jb2 = new JMenuItem("Â¼Èë");
+     jb2 = new JMenuItem("å½•å…¥");
      jb2.addActionListener(this);
      jp2 = new JPanel(); 
      
-     jb3 = new JMenuItem("ĞŞ¸Ä");
+     jb3 = new JMenuItem("ä¿®æ”¹");
      jb3.addActionListener(this);
      jp3 = new JPanel(); 
      
-     jb4 = new JMenuItem("É¾³ı");
+     jb4 = new JMenuItem("åˆ é™¤");
      jb4.addActionListener(this);
      jp4 = new JPanel();  
      
      file.add(jb1);
-     // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+     // è®¾ç½®èœå•åˆ†éš”ç¬¦
      file.addSeparator();
      file.add(jb2);
      file.addSeparator();
@@ -68,17 +68,17 @@ private static final long serialVersionUID = 1L;
 
      menuBar.add(file);
      
-     // ÉèÖÃ²Ëµ¥À¸£¬Ê¹ÓÃÕâÖÖ·½Ê½ÉèÖÃ²Ëµ¥À¸¿ÉÒÔ²»Õ¼ÓÃ²¼¾Ö¿Õ¼ä
+     // è®¾ç½®èœå•æ ï¼Œä½¿ç”¨è¿™ç§æ–¹å¼è®¾ç½®èœå•æ å¯ä»¥ä¸å ç”¨å¸ƒå±€ç©ºé—´
      setJMenuBar(menuBar);
   
-  //´´½¨Ä£ĞÍ¶ÔÏó
+  //åˆ›å»ºæ¨¡å‹å¯¹è±¡
   sm = new StuModel();
 
-  //³õÊ¼»¯
+  //åˆå§‹åŒ–
   jt = new JTable(sm);  
   jsp = new JScrollPane(jt);
   
-  //½«jsp·ÅÈëµ½jframeÖĞ
+  //å°†jspæ”¾å…¥åˆ°jframeä¸­
   this.add(jsp);
   //this.add(jp1,"North");
   this.setSize(600, 400);
@@ -87,43 +87,43 @@ private static final long serialVersionUID = 1L;
  
  }
  public void actionPerformed(ActionEvent arg0) {
-  //ÅĞ¶ÏÊÇÄÄ¸ö×Ó²Ëµ¥±»µã»÷
+  //åˆ¤æ–­æ˜¯å“ªä¸ªå­èœå•è¢«ç‚¹å‡»
 	 if(arg0.getSource() == jb1){	     
-		  System.out.println("²éÑ¯...");
-		  StuFindDiag sf=new StuFindDiag(this,"²éÑ¯³É¼¨",true);
-		  //¹¹½¨Ò»¸öÊı¾İÄ£ĞÍÀà£¬²¢¸üĞÂ
+		  System.out.println("æŸ¥è¯¢...");
+		  StuFindDiag sf=new StuFindDiag(this,"æŸ¥è¯¢æˆç»©",true);
+		  //æ„å»ºä¸€ä¸ªæ•°æ®æ¨¡å‹ç±»ï¼Œå¹¶æ›´æ–°
 		  sm = new StuModel();
-		  //¸üĞÂjtable
+		  //æ›´æ–°jtable
 		   jt.setModel(sm);
    }
   
-  //Ìí¼Ó½çÃæ
+  //æ·»åŠ ç•Œé¢
 if(arg0.getSource() == jb2){
-	 System.out.println("Â¼Èë...");	
-	  StuAddDiag sa=new StuAddDiag(this, "Â¼Èë³É¼¨", true);
-	  //¹¹½¨Ò»¸öÊı¾İÄ£ĞÍÀà£¬²¢¸üĞÂ
+	 System.out.println("å½•å…¥...");	
+	  StuAddDiag sa=new StuAddDiag(this, "å½•å…¥æˆç»©", true);
+	  //æ„å»ºä¸€ä¸ªæ•°æ®æ¨¡å‹ç±»ï¼Œå¹¶æ›´æ–°
 	  sm = new StuModel();
-	  //¸üĞÂjtable
+	  //æ›´æ–°jtable
 	   jt.setModel(sm);
 	  }
   
 	 
-	 //ĞŞ¸Ä½çÃæ
+	 //ä¿®æ”¹ç•Œé¢
  if(arg0.getSource() == jb3){	     
-	  System.out.println("ĞŞ¸Ä...");	
-	  StuUpDiag su=new StuUpDiag(this, "ĞŞ¸Ä³É¼¨", true);
-	  //¹¹½¨Ò»¸öÊı¾İÄ£ĞÍÀà£¬²¢¸üĞÂ
+	  System.out.println("ä¿®æ”¹...");	
+	  StuUpDiag su=new StuUpDiag(this, "ä¿®æ”¹æˆç»©", true);
+	  //æ„å»ºä¸€ä¸ªæ•°æ®æ¨¡å‹ç±»ï¼Œå¹¶æ›´æ–°
 	  sm = new StuModel();
-	  //¸üĞÂjtable
+	  //æ›´æ–°jtable
 	   jt.setModel(sm);
 	   }
 	 
   else if(arg0.getSource() == jb4){
-	  System.out.println("ĞŞ¸Ä...");	
-	  StuDeleteDiag sd=new StuDeleteDiag(this, "É¾³ı³É¼¨", true);
-	  //¹¹½¨Ò»¸öÊı¾İÄ£ĞÍÀà£¬²¢¸üĞÂ
+	  System.out.println("ä¿®æ”¹...");	
+	  StuDeleteDiag sd=new StuDeleteDiag(this, "åˆ é™¤æˆç»©", true);
+	  //æ„å»ºä¸€ä¸ªæ•°æ®æ¨¡å‹ç±»ï¼Œå¹¶æ›´æ–°
 	  sm = new StuModel();
-	  //¸üĞÂjtable
+	  //æ›´æ–°jtable
 	   jt.setModel(sm);
   } 
  }}
